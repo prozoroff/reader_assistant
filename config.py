@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Final
 
-# Путь к файлу с те
+# Путь к файлу с текстом
 BASE_DIR: Final[Path] = Path(__file__).parent
 DATA_DIR: Final[Path] = BASE_DIR / "data"
 FILE_PATH: Final[Path] = DATA_DIR / "dairy.txt"
