@@ -1,0 +1,58 @@
+[project]
+name = "reader_assistant"
+version = "0.1.0"
+description = "Ассистент для анализа литературных произведений"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "langchain>=0.1.0",
+    "langchain-community>=0.0.10",
+    "yandex-gpt>=0.1.0",
+    "yandex-geocoder>=0.1.0",
+    "networkx>=3.0",
+    "matplotlib>=3.7.0",
+    "cartopy>=0.21.0",
+    "pydantic>=2.0.0",
+    "tenacity>=8.2.0"
+]
+requires-python = ">=3.9"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+] 
