@@ -12,10 +12,12 @@ from ..utils.types import (
     GraphData,
     TimelineData,
     MapData,
+    MermaidData,
     VisualizationData,
     CharacterRelation,
     TimelineEvent,
-    Location
+    Location,
+    MermaidDiagram
 )
 
 logger = logging.getLogger(__name__)
@@ -83,6 +85,9 @@ class VisualizationAgent:
             elif self._is_map_data(data):
                 logger.info("Visualizing map")
                 self._visualize_map(data)
+            elif self._is_mermaid_data(data):
+                logger.info("Displaying mermaid diagrams")
+                self._display_mermaid(data)
             else:
                 raise ValueError("Unsupported data format for visualization")
                 
@@ -118,6 +123,15 @@ class VisualizationAgent:
             return False
         first_item = data[0]
         return isinstance(first_item, dict) and "name" in first_item and "coordinates" in first_item
+        
+    def _is_mermaid_data(self, data: VisualizationData) -> bool:
+        """Checks if the data is mermaid diagrams."""
+        if not isinstance(data, list):
+            return False
+        if not data:
+            return False
+        first_item = data[0]
+        return isinstance(first_item, dict) and all(key in first_item for key in ["title", "code", "type"])
         
     def _visualize_graph(self, data: GraphData) -> None:
         """Visualizes the relationship graph between characters."""
@@ -246,4 +260,23 @@ class VisualizationAgent:
             
         except Exception as e:
             logger.error(f"Error visualizing map: {str(e)}")
-            raise ValueError(f"Failed to visualize map: {str(e)}") 
+            raise ValueError(f"Failed to visualize map: {str(e)}")
+            
+    def _display_mermaid(self, data: MermaidData) -> None:
+        """Displays mermaid diagrams in console format."""
+        try:
+            print("\n" + "="*80)
+            print("MERMAID ДИАГРАММЫ")
+            print("="*80)
+            
+            for i, diagram in enumerate(data, 1):
+                print(f"\n{i}. {diagram['title']} ({diagram['type']})")
+                print("-" * 60)
+                print(diagram['code'])
+                print()
+                
+            logger.info(f"Successfully displayed {len(data)} mermaid diagrams")
+            
+        except Exception as e:
+            logger.error(f"Error displaying mermaid diagrams: {str(e)}")
+            raise ValueError(f"Failed to display mermaid diagrams: {str(e)}")

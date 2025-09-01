@@ -53,8 +53,27 @@ class MapData(List[Location]):
     List of geographical objects with coordinates.
     """
 
-VisualizationData = Union[GraphData, TimelineData, MapData]
+class MermaidDiagram(TypedDict):
+    """
+    Type for representing a mermaid diagram.
+    
+    Attributes:
+        title: Short title/description of the diagram
+        code: Mermaid diagram code
+        type: Type of diagram (timeline, flowchart, graph, etc.)
+    """
+    title: str
+    code: str
+    type: str
+
+class MermaidData(List[MermaidDiagram]):
+    """
+    Type for representing mermaid diagrams data.
+    List of mermaid diagrams with descriptions.
+    """
+
+VisualizationData = Union[GraphData, TimelineData, MapData, MermaidData]
 """
 Type for representing data that can be visualized.
-Can be a relationship graph, timeline, or map.
+Can be a relationship graph, timeline, map, or mermaid diagrams.
 """
