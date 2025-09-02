@@ -3,6 +3,7 @@
 A project for analyzing and visualizing text data using LLM.
 
 [Explanatory article](https://habr.com/ru/articles/900870/)
+
 [Examples of infographics](https://prozoroff.github.io/reader_assistant/mermaid/)
 
 ## Features
