@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика по роману "1984"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            border-bottom: 3px solid #a9cce3;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+        .diagram-container {
+            margin-bottom: 60px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            background: #fdfdfd;
+        }
+        h2 {
+            text-align: center;
+            color: #c0392b;
+            margin-top: 0;
+        }
+        p.explanation {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 15px auto 30px auto;
+        }
+        .mermaid {
+            text-align: center;
+        }
+        /* Style for Mermaid SVG to ensure it's large and clear */
+        svg[id^="m"][width][height] {
+            width: 100%;
+            max-width: 900px; /* Max-width to prevent it from becoming too huge on very large screens */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Инфографика по роману Джорджа Оруэлла "1984"</h1>
+
+        <!-- Diagram 1: Hierarchy of Power -->
+        <div class="diagram-container">
+            <h2>Иерархия Власти в Океании</h2>
+            <p class="explanation">Эта диаграмма показывает жесткую кастовую систему Океании. На вершине — обожествляемый Большой Брат. Ниже — Внутренняя партия, обладающая реальной властью. Затем — Внешняя партия, за которой ведется самое пристальное наблюдение. В самом низу — Пролы, которых партия считает существами низшего порядка и почти не контролирует.</p>
+            <div class="mermaid">
+graph TD
+    A["<b style='font-size: 24px; color: #c0392b;'>Большой Брат</b><br/>(Символ и вершина власти)"] --> B["<b style='font-size: 20px;'>Внутренняя Партия</b><br/>(≈2% населения)<br/>Элита, идеологи, администраторы"];
+    B --> C["<b style='font-size: 20px;'>Внешняя Партия</b><br/>(≈13% населения)<br/>Исполнители, чиновники (Уинстон)"];
+    B --> |"Контролирует и манипулирует"| C;
+    C --> |"Наблюдают и подавляют"| D["<b style='font-size: 20px;'>Пролы</b><br/>(≈85% населения)<br/>Необразованный рабочий класс"];
+    
+    subgraph "ПОЛИЦИЯ МЫСЛЕЙ"
+        direction LR
+        PM["(Thought Police)"]
+    end
+    
+    B --- PM;
+    C --- PM;
+    PM -.->|"Редкие рейды"| D;
+
+    style A fill:#c0392b,color:#fff,stroke:#7b241c,stroke-width:4px
+    style B fill:#e67e22,color:#fff,stroke:#9c5112,stroke-width:2px
+    style C fill:#3498db,color:#fff,stroke:#21618c,stroke-width:2px
+    style D fill:#7f8c8d,color:#fff,stroke:#515a5a,stroke-width:2px
+    style PM fill:#512E5F,color:#fff,stroke:#3b2046,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- Diagram 2: Ministries of 1984 -->
+        <div class="diagram-container">
+            <h2>Министерства Океании (Принцип Двоемыслия)</h2>
+            <p class="explanation">Названия министерств прямо противоположны их деятельности. Это ярчайший пример двоемыслия — способности одновременно придерживаться двух противоположных убеждений. Министерство Мира ведет войну, Министерство Правды лжет, Министерство Любви пытает, а Министерство Изобилия морит голодом.</p>
+            <div class="mermaid">
+graph LR
+    subgraph "Министерство Правды (МИНИПРАВ)"
+        A1["<b style='color:#2980b9;'>Официальная функция:</b><br/>Информация, развлечения, образование, искусство"]
+        A2["<b style='color:#c0392b;'>Реальная функция:</b><br/>Фальсификация истории, пропаганда, создание Новояза"]
+        A1 -.-> A2
+    end
+    
+    subgraph "Министерство Мира (МИНИМИР)"
+        B1["<b style='color:#27ae60;'>Официальная функция:</b><br/>Ведение военных дел"]
+        B2["<b style='color:#c0392b;'>Реальная функция:</b><br/>Ведение вечной, безвыигрышной войны"]
+        B1 -.-> B2
+    end
+    
+    subgraph "Министерство Любви (МИНИЛЮБ)"
+        C1["<b style='color:#8e44ad;'>Официальная функция:</b><br/>Поддержание закона и порядка"]
+        C2["<b style='color:#c0392b;'>Реальная функция:</b><br/>Пытки, допросы, промывка мозгов, уничтожение инакомыслящих"]
+        C1 -.-> C2
+    end
+    
+    subgraph "Министерство Изобилия (МИНИЗО)"
+        D1["<b style='color:#f1c40f;'>Официальная функция:</b><br/>Управление экономикой"]
+        D2["<b style='color:#c0392b;'>Реальная функция:</b><br/>Создание дефицита и поддержание населения в нищете"]
+        D1 -.->|"Двоемыслие"| D2
+    end
+
+    style A1 fill:#aed6f1,stroke:#2980b9
+    style B1 fill:#a3e4d7,stroke:#27ae60
+    style C1 fill:#d7bde2,stroke:#8e44ad
+    style D1 fill:#f9e79f,stroke:#f1c40f
+    
+    style A2 fill:#fadbd8,stroke:#c0392b
+    style B2 fill:#fadbd8,stroke:#c0392b
+    style C2 fill:#fadbd8,stroke:#c0392b
+    style D2 fill:#fadbd8,stroke:#c0392b
+            </div>
+        </div>
+
+        <!-- Diagram 3: Core Concepts of Party Control -->
+        <div class="diagram-container">
+            <h2>Ключевые Инструменты Контроля Партии</h2>
+            <p class="explanation">Партия удерживает власть с помощью комплексной системы контроля. Она переписывает историю, чтобы прошлое всегда соответствовало настоящему, сужает язык (Новояз), чтобы сделать невозможным сложное мышление, и осуществляет тотальную слежку через телекраны и карательные органы вроде Полиции Мыслей.</p>
+            <div class="mermaid">
+mindmap
+  root(("АНГСОЦ"))
+    ("<b>Контроль реальности</b>")
+      ::icon(fa fa-edit)
+      (Двоемыслие)
+        Принятие двух противоречий
+      (Изменение прошлого)
+        "Кто контролирует прошлое,<br/>тот контролирует будущее"
+    ("<b>Контроль мысли</b>")
+      ::icon(fa fa-brain)
+      (Новояз)
+        Сужение словарного запаса <br/> для сужения мысли
+      (Мыслепреступление)
+        Неортодоксальная мысль — <br/> тягчайшее преступление
+    ("<b>Контроль общества</b>")
+      ::icon(fa fa-eye)
+      (Телекраны)
+        Постоянное наблюдение и пропаганда
+      (Полиция Мыслей)
+        Выявление и уничтожение инакомыслящих
+            </div>
+        </div>
+
+        <!-- Diagram 4: Winston's Journey -->
+        <div class="diagram-container">
+            <h2>Психологический путь Уинстона Смита</h2>
+            <p class="explanation">Эта схема показывает трагическую трансформацию Уинстона: от робкого инакомыслящего, который ищет правду и любовь, до полностью сломленного человека, чья личность стерта и заменена безграничной любовью к своему мучителю — Большому Брату.</p>
+            <div class="mermaid">
+graph TD
+    A["<b style='color:#2980b9;'>Сомнение и пробуждение</b><br/><i>(Покупка дневника, ненависть к Партии)</i>"] --> B["<b style='color:#27ae60;'>Тайный бунт</b><br/><i>(Ведение дневника, отношения с Джулией)</i>"];
+    B --> C["<b style='color:#f1c40f;'>Поиск единомышленников</b><br/><i>(Доверие к О'Брайену, получение 'Книги')</i>"];
+    C --> D["<b style='color:#e67e22;'>Арест и разрушение</b><br/><i>(Министерство Любви, осознание предательства О'Брайена)</i>"];
+    D --> E["<b style='color:#c0392b;'>Пытки и слом</b><br/><i>(Принятие партийных догм, 2+2=5)</i>"];
+    E --> F["<b style='color:#95a5a6;'>Предательство любви</b><br/><i>(Комната 101, 'Сделайте это с Джулией!')</i>"];
+    F --> G["<b style='color:#2c3e50;'>Полное подчинение</b><br/><i>('Он любил Большого Брата')</i>"];
+    
+    classDef stage1 fill:#aed6f1,stroke:#2980b9
+    classDef stage2 fill:#a3e4d7,stroke:#27ae60
+    classDef stage3 fill:#f9e79f,stroke:#f1c40f
+    classDef stage4 fill:#f5cba7,stroke:#e67e22
+    classDef stage5 fill:#fadbd8,stroke:#c0392b
+    classDef stage6 fill:#d6dbdf,stroke:#95a5a6
+    classDef stage7 fill:#d5d6d6,stroke:#2c3e50
+    class A stage1;
+    class B stage2;
+    class C stage3;
+    class D stage4;
+    class E stage5;
+    class F stage6;
+    class G stage7;
+            </div>
+        </div>
+
+        
+        <!-- Diagram 5: Shifting Alliances -->
+        <div class="diagram-container">
+            <h2>Геополитика: Вечная Война</h2>
+            <p class="explanation">Мир романа разделен на три сверхдержавы, которые находятся в состоянии перманентной войны. Союзы и враги постоянно меняются. Это позволяет Партии держать население в постоянном напряжении, оправдывать лишения и мгновенно переписывать историю, заявляя: "Мы всегда воевали с Остазией".</p>
+            <div class="mermaid">
+graph LR
+    subgraph "Состояние I"
+        direction LR
+        A1(Океания) <-->|Вражда| B1(Евразия)
+        A1 <-.->|Альянс| C1(Остазия)
+    end
+
+    subgraph "Состояние II"
+        direction LR
+        A2(Океания) <-->|Вражда| C2(Остазия)
+        A2 <-.->|Альянс| B2(Евразия)
+    end
+    
+    A1 -->|"Мгновенное<br/>переключение<br/>пропаганды"| A2
+    
+    style A1 fill:#3498db,color:white
+    style B1 fill:#c0392b,color:white
+    style C1 fill:#f1c40f,color:#333
+
+       style A2 fill:#3498db,color:white
+    style B2 fill:#c0392b,color:white
+    style C2 fill:#f1c40f,color:#333
+            </div>
+        </div>
+
+
+        <!-- Diagram 6: Character Relationships -->
+        <div class="diagram-container">
+            <h2>Карта Взаимоотношений Персонажей</h2>
+            <p class="explanation">В центре сюжета — Уинстон. Его отношения с Джулией — это попытка обрести человечность через любовь. Отношения с О'Брайеном — трагическая ошибка, основанная на ложной надежде, которая приводит его к полному уничтожению. Мистер Чаррингтон и О'Брайен являются воплощением всепроникающей системы обмана Партии.</p>
+            <div class="mermaid">
+graph TD
+    Winston("<b>Уинстон Смит</b><br/>Протагонист, бунтарь")
+    Julia("<b>Джулия</b><br/>Бунтарка 'от бедра'")
+    OBrien("<b>О'Брайен</b><br/>Агент Полиции Мыслей")
+    BigBrother("<b>Большой Брат</b><br/>Объект поклонения и страха")
+    Charrington("<b>Мистер Чаррингтон</b><br/>Агент Полиции Мыслей")
+
+    Winston -- "Любовь и<br/>совместный бунт" --> Julia
+    Winston -- "Ложная надежда,<br/>поиск наставника" --> OBrien
+    OBrien -- "Манипуляция и<br/>уничтожение личности" --> Winston
+    Charrington -- "Предоставляет<br/>ложное убежище" --> Winston
+    Winston -.->|"Ненависть -> Сломанная любовь"| BigBrother
+    Julia -- "Предает под пытками" --> Winston
+    Winston_final(Сломленный Уинстон)
+    Winston -- "Предает под пытками" --> Julia
+    Winston --> Winston_final
+    Winston_final -- "Искренняя Любовь" --> BigBrother
+    
+    style Winston fill:#2980b9, color:white
+    style Julia fill:#27ae60, color:white
+    style OBrien fill:#c03k2b, color:white
+    style Charrington fill:#7f8c8d, color:white
+    style BigBrother fill:#17202a, color:white
+    style Winston_final fill:#515a5a, color:white
+            </div>
+        </div>
+
+        
+        <!-- Diagram 7: The Cycle of Thoughtcrime -->
+        <div class="diagram-container">
+            <h2>Цикл Мыслепреступления и "Распыления"</h2>
+            <p class="explanation">Эта диаграмма показывает полный процесс, которому подвергается мыслепреступник. Система не просто убивает врагов, она их стирает. Сначала человека ломают, заставляя искренне полюбить Партию, и только потом уничтожают физически. Министерство Правды завершает процесс, удаляя все упоминания о нем из истории, как будто его никогда и не было.</p>
+            <div class="mermaid">
+sequenceDiagram
+    participant P as Человек
+    participant TM as Полиция Мыслей
+    participant M as Министерство Правды
+    participant ML as Министерство Любви
+    
+    P->>P: Появление неортодоксальной мысли (Мыслепреступление)
+    Note over P: Осознание, сомнение, эмоции
+    
+    loop Наблюдение
+        TM->>P: Тайная слежка годами
+    end
+    
+    TM->>P: Арест (обычно ночью)
+    P->>ML: Доставка в Министерство Любви
+    
+    activate ML
+    ML->>P: Пытки, допросы, слом воли
+    Note over ML,P: Цель: не наказать, а "излечить"
+    ML->>P: "Перевоспитание" (2+2=5)
+    deactivate ML
+    
+    P-->P: Искреннее раскаяние и любовь к Партии
+    
+    TM->>P: Расстрел в затылок
+    Note over P: Уничтожение "излеченного" тела
+    
+    M->>M: "Распыление" - удаление всех<br>записей о существовании человека
+    Note over M: Человек никогда не существовал
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({startOnLoad:true});
+    </script>
+</body>
+</html>

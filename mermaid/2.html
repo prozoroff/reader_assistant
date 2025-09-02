@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика по рассказу "Дама с собачкой"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            border-bottom: 3px solid #a9cce3;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+        .diagram-container {
+            margin-bottom: 60px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            background: #fdfdfd;
+        }
+        h2 {
+            text-align: center;
+            color: #c0392b;
+            margin-top: 0;
+        }
+        p.explanation {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 15px auto 30px auto;
+        }
+        .mermaid {
+            text-align: center;
+        }
+        /* Style for Mermaid SVG to ensure it's large and clear */
+        svg[id^="m"][width][height] {
+            width: 100%;
+            max-width: 900px; /* Max-width to prevent it from becoming too huge on very large screens */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Инфографика по рассказу "Дама с собачкой"</h1>
+
+        <!-- Diagram 1: Geography of Love -->
+        <div class="diagram-container">
+            <h2>География любви</h2>
+            <p class="explanation">
+                Перемещения героев между тремя ключевыми точками: свободной и солнечной Ялтой, суетной и привычной Москвой и серым, унылым городом С. Каждая локация имеет своё символическое значение в истории их отношений.
+            </p>
+            <div class="mermaid">
+flowchart TD
+subgraph "Начало"
+M1["<b>Москва</b><br>Привычная жизнь Гурова, скука"]
+end
+
+
+subgraph "Курортный роман"
+    Y["<b>Ялта</b><br>Знакомство, свобода, зарождение чувства"]
+end
+
+subgraph "Осознание и тоска"
+    M2["<b>Москва</b><br>Гуров не может забыть Анну"]
+    S["<b>Город С.</b><br>Тайная встреча в театре, серость бытия Анны"]
+end
+
+subgraph "Тайная жизнь"
+    M3["<b>Москва</b><br>Регулярные встречи в 'Славянском базаре', страдания и любовь"]
+end
+
+M1 -->|В отпуск| Y
+Y -->|Возвращение| M2
+M2 -->|В поисках Анны| S
+S -.->|Тайные визиты Анны| M3
+
+style Y fill:#fcf3cf,stroke:#f1c40f,stroke-width:3px
+style S fill:#d5d8dc,stroke:#7f8c8d,stroke-width:3px
+style M1 fill:#aed6f1,stroke:#3498db,stroke-width:2px
+style M2 fill:#aed6f1,stroke:#3498db,stroke-width:2px
+style M3 fill:#e8daef,stroke:#9b59b6,stroke-width:3px
+            </div>
+        </div>
+
+        <!-- Diagram 2: Evolution of Gurov -->
+        <div class="diagram-container">
+            <h2>Эволюция Гурова</h2>
+            <p class="explanation">
+                Центральный стержень рассказа — это внутренняя трансформация главного героя. Диаграмма сравнивает его мироощущение до и после встречи с Анной Сергеевной, показывая, как мимолетное увлечение переросло в глубокое чувство, изменившее всю его жизнь.
+            </p>
+            <div class="mermaid">
+classDiagram
+direction LR
+class Gurov_before {
++Циник, считающий женщин "низшей расой"
++Ищет легких, ни к чему не обязывающих связей
++Живет по инерции, ощущая пустоту
++Уверен, что быстро забудет "даму с собачкой"
+}
+class Gurov_after {
++Глубоко и искренне влюблен
++Осознает фальшь своей публичной жизни
++Страдает от невозможности быть с любимой
++Понимает, что его жизнь разделилась на "до" и "после"
+}
+
+Gurov_before --> Gurov_after : Преображение
+
+style Gurov_before fill:#d6eaf8
+style Gurov_after fill:#d1f2eb
+            </div>
+        </div>
+
+        <!-- Diagram 3: Timeline -->
+        <div class="diagram-container">
+            <h2>Хронология отношений</h2>
+            <p class="explanation">
+                Таймлайн ключевых моментов в истории Гурова и Анны, разделенный на четыре части в соответствии со структурой рассказа Чехова.
+            </p>
+            <div class="mermaid">
+timeline
+title Основные события рассказа
+section Часть I (Ялта)
+Лето : Гуров замечает "даму с собачкой"
+: Знакомство и начало романа
+: Исповедь и раскаяние Анны
+: Прощание на вокзале, уверенность, что это конец
+section Часть II (Москва)
+Осень : Гуров возвращается к привычной жизни, но не может забыть Анну
+: Воспоминания о ней становятся навязчивыми
+Зима : Гуров решает ехать в город С.
+section Часть III (Город С.)
+ Гуров находит дом фон Дидериц
+: Встреча в театре во время антракта
+: Обещание Анны приехать в Москву
+section Часть IV (Москва)
+ Начало тайных встреч в гостинице "Славянский базар"
+: Герои осознают, что любят друг друга по-настоящему
+: Открытый финал: они понимают, что самое сложное только начинается
+            </div>
+        </div>
+
+        <!-- Diagram 4: Two Lives Conflict -->
+        <div class="diagram-container">
+            <h2>Ключевой конфликт: Две жизни</h2>
+            <p class="explanation">
+                Герои вынуждены существовать в двух параллельных реальностях. Одна — явная, публичная, построенная на социальных условностях и лжи. Другая — тайная, скрытая от всех, где они могут быть самими собой и испытывать подлинные чувства.
+            </p>
+            <div class="mermaid">
+graph TD
+subgraph "Явная жизнь (ФАЛЬШЬ)"
+A1("Семья, служба, клуб")
+A2("Светское общество")
+A3("Круг знакомых")
+A4("Видимость благополучия")
+end
+
+subgraph "Тайная жизнь (ИСТИНА)"
+    B1("Встречи в гостинице")
+    B2("Истинные чувства")
+    B3("Разговоры о будущем")
+    B4("Надежда и страдание")
+end
+
+Gurov("<b>Гуров</b>")
+Anna("<b>Анна Сергеевна</b>")
+
+Gurov -- "вынужден существовать" --> A1
+Gurov --"скрывается от" --> A2
+Anna -- "вынуждена существовать" --> A1
+
+Gurov -- "стремится к" --> B1
+Gurov -- "испытывает" --> B2
+Anna -- "стремится к" --> B1
+Anna -- "испытывает" --> B2
+
+B1 <--> B2 <--> B3 <--> B4 <--> B1
+
+Gurov ---|"<b>Подлинная связь</b>"| Anna
+style Gurov fill:#c5cae9
+style Anna fill:#c5cae9
+            </div>
+        </div>
+
+        <!-- Diagram 5: Relationship Map -->
+        <div class="diagram-container">
+            <h2>Карта отношений</h2>
+            <p class="explanation">
+                Эта схема наглядно показывает центральную любовную связь рассказа и противопоставляет её формальным, но лишенным чувств брачным узам, которые связывают героев с их "законными" половинами.
+            </p>
+            <div class="mermaid">
+graph TD
+subgraph "Главные герои"
+G(Гуров)
+A(Анна Сергеевна)
+end
+
+subgraph "Их супруги"
+    GW(Жена Гурова)
+    AH(Муж Анны, фон Дидериц)
+end
+
+G -- "<b>Истинная любовь<br>и страдание</b>" --- A
+
+G -. "Брак по привычке" .-> GW
+A -. "Нелюбимый брак" .-> AH
+
+style G fill:#a9cce3,stroke:#3498db,stroke-width:2px,color:#000
+style A fill:#a9cce3,stroke:#3498db,stroke-width:2px,color:#000
+style GW fill:#f2f3f4,stroke:#bdc3c7,stroke-width:2px,color:#000
+style AH fill:#f2f3f4,stroke:#bdc3c7,stroke-width:2px,color:#000
+            </div>
+        </div>
+
+        <!-- Diagram 6: Main Themes -->
+        <div class="diagram-container">
+            <h2>Основные темы рассказа</h2>
+            <p class="explanation">
+                Майнд-карта, обобщающая главные смысловые пласты произведения: от преображающей силы любви до критики фальши светского общества.
+            </p>
+            <div class="mermaid">
+mindmap
+    root(("Дама с собачкой"))
+        <b>Любовь</b>
+         ::icon(fa fa-heart)
+         Преображающая сила
+         От курортного романа к глубокому чувству
+         Любовь как страдание и счастье
+        <b>Двойная жизнь</b>
+         ::icon(fa fa-mask)
+         ("Явная (фальшивая) и тайная (истинная)")
+         Конфликт долга и чувства
+         Ощущение клетки
+        <b>Общественная мораль</b>
+         ::icon(fa fa-users)
+         Критика пустоты и лицемерия света
+         Брак без любви как норма
+         Осуждение и страх быть раскрытыми
+        <b>Поиски смысла</b>
+         ::icon(fa fa-search)
+         Осознание бессмысленности прежней жизни
+         Любовь как единственная подлинная ценность
+         Открытый финал: начало трудного пути
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+</body>
+</html>

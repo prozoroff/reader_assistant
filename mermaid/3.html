@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика по роману "Анна Каренина"</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            border-bottom: 3px solid #a9cce3;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+        .diagram-container {
+            margin-bottom: 60px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            background: #fdfdfd;
+        }
+        h2 {
+            text-align: center;
+            color: #c0392b;
+            margin-top: 0;
+        }
+        p.explanation {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 15px auto 30px auto;
+        }
+        .mermaid {
+            text-align: center;
+        }
+        /* Style for Mermaid SVG to ensure it's large and clear */
+        svg[id^="m"][width][height] {
+            width: 100%;
+            max-width: 900px; /* Max-width to prevent it from becoming too huge on very large screens */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Анализ романа Льва Толстого "Анна Каренина" в диаграммах</h1>
+        <p class="explanation">Визуальное исследование структуры, персонажей и ключевых идей великого романа. Диаграммы помогают наглядно представить сложные взаимосвязи и параллельные сюжетные линии, заложенные автором.</p>
+
+        <!-- Diagram 1: Dual Timeline -->
+        <div class="diagram-container">
+            <h2>Две сюжетные линии: Анна и Левин</h2>
+            <p class="explanation">Роман построен на противопоставлении двух судеб. Эта диаграмма показывает параллельное развитие трагической истории Анны и Вронского и пути духовных исканий и обретения семейного счастья Константина Левина.</p>
+            <div class="mermaid">
+            timeline
+                title Две судьбы в "Анне Карениной"
+                section Линия Анны и Вронского
+                    1872 : Встреча на вокзаle
+                        : Судьбоносный бал в Москве
+                        : Скачки и публичное проявление чувств
+                    1873 : Рождение дочери Анни
+                        : Разрыв с Карениным и обществом
+                        : Поездка в Италию в поисках свободы
+                    1875 : Возвращение в Россию, социальная изоляция
+                        : Нарастание ревности и отчаяния
+                    1876 : Трагическая гибель под поездом
+                section Линия Левина и Китти
+                    1872 : Неудачное предложение Левина
+                        : Болезнь Китти, Левин в деревне, хозяйственные и философские поиски
+                    1873 : Примирение и помолвка
+                    1874 : Свадьба, начало семейной жизни в Покровском
+                    1875 : Рождение сына
+                    1876 : Обретение смысла жизни в вере и семье
+            </div>
+        </div>
+
+        <!-- Diagram 2: Relationship Map -->
+        <div class="diagram-container">
+            <h2>Карта взаимоотношений персонажей</h2>
+            <p class="explanation">"Все смешалось в доме Облонских". Эта схема отображает сложный клубок семейных, любовных и общественных связей, который является двигателем сюжета.</p>
+            <div class="mermaid">
+            graph TD
+                subgraph "Семья Облонских/Щербацких"
+                    Stiva(Стива Облонский)
+                    Dolly(Долли)
+                    Kitty(Китти)
+                end
+                
+                subgraph "Любовный треугольник"
+                    Anna(Анна Каренина)
+                    Karenin(Алексей Каareнин)
+                    Vronsky(Алексей Вронский)
+                end
+
+                subgraph "Мир Левина"
+                    Levin(Константин Левин)
+                end
+
+                Stiva -- Сестра --> Anna
+                Stiva -- Жена --> Dolly
+                Dolly -- Сестра --> Kitty
+                
+                Anna -- Брак/Долг --> Karenin
+                Anna -- Страсть/Любовь --> Vronsky
+                Vronsky -- Соперник --> Karenin
+                
+                Kitty -- Любовь/Брак --> Levin
+                Vronsky -.->|Увлечение| Kitty
+                
+                style Anna fill:#e74c3c,color:#fff,stroke:#c0392b,stroke-width:3px
+                style Vronsky fill:#e74c3c,color:#fff,stroke:#c0392b,stroke-width:3px
+                style Levin fill:#2ecc71,color:#fff,stroke:#27ae60,stroke-width:3px
+                style Kitty fill:#2ecc71,color: #fff,stroke:#27ae60,stroke-width:3px
+                style Karenin fill:#95a5a6,color:#fff
+                style Stiva fill:#f1c40f,color:#333
+                style Dolly fill:#f1c40f,color:#333
+
+            </div>
+        </div>
+
+        <!-- Diagram 3: Geographic Symbolism -->
+        <div class="diagram-container">
+            <h2>География и символизм мест</h2>
+            <p class="explanation">Перемещения героев между городом, деревней и Европой не случайны. Каждое место в романе несет свою символическую нагрузку, отражая внутреннее состояние персонажей.</p>
+            <div class="mermaid">
+                flowchart TD
+                    A["<b>Санкт-Петербург</b><br/>Мир Каренина<br/>Холодный свет, карьера, долг, лицемерие"]
+                    B["<b>Москва</b><br/>Мир Облонских и Щербацких<br/>Старая аристократия, балы, семейные ценности"]
+                    C["<b>Деревня (Покровское)</b><br/>Мир Левина<br/>Природа, хозяйство, семья, поиски смысла жизни"]
+                    D["<b>Европа (Италия, Германия)</b><br/>Временное убежище<br/>Искусство, иллюзия свободы, чужбина"]
+
+                    A <-.->|Частые поездки Анны и Стивы| B
+                    B -- "Китти и Левин обретают счастье" --> C
+                    A -- "Анна и Вронский бегут от общества" --> D
+                    D -- "Возвращение в изоляцию" --> A
+                    
+                    style A fill:#a9cce3,stroke:#3498db
+                    style B fill:#f9e79f,stroke:#f1c40f
+                    style C fill:#a3e4d7,stroke:#27ae60
+                    style D fill:#d2b4de,stroke:#8e44ad
+            </div>
+        </div>
+
+        <!-- Diagram 4: Anna's Tragedy Flowchart -->
+        <div class="diagram-container">
+            <h2>Этапы трагедии Анны</h2>
+            <p class="explanation">Эта диаграмма последовательно показывает путь Анны — от всепоглощающей страсти до полного отчаяния и гибели. Каждый шаг ведет ее все дальше от общества и от самой себя.</p>
+            <div class="mermaid">
+                graph TD
+                    A(Встреча с Вронским) --> B{Любовь-страсть};
+                    B --> C(Разрыв с устоями общества);
+                    C --> D(Признание Каренину);
+                    D --> E(Социальная изоляция);
+                    E --> F(Потеря сына Серёжи);
+                    F --> G(Ревность и зависимость от Вронского);
+                    G --> H(Употребление морфия);
+                    H --> I(Отчаяние и потеря смысла);
+                    I --> J(<b>Самоубийство под поездом</b>);
+                    
+                    style A fill:#f9e79f,stroke:#f1c40f
+                    style J fill:#c0392b,stroke:#a93226,color:white,stroke-width:4px
+            </div>
+        </div>
+
+        <!-- Diagram 5: Key Themes -->
+        <div class="diagram-container">
+            <h2>Ключевые темы и символы романа</h2>
+            <p class="explanation">Роман пронизан глубокими философскими темами и яркими символами, которые помогают раскрыть замысел автора. Эта карта сознания объединяет основные смысловые узлы произведения.</p>
+            <div class="mermaid">
+            mindmap
+              root(("Анна Каренина"))
+                ("<b>Темы</b>")
+                  ("Семья 'счастливая' vs 'несчастная'")
+                  ("Любовь разрушительная vs созидательная")
+                  ("Общество и его законы")
+                  ("Вера и духовный поиск")
+                  ("Противостояние города и деревни")
+                ("<b>Символы</b>")
+                  ::icon(fa fa-train)
+                  ("Поезд / Железная дорога")
+                    ("Начало и конец любви")
+                    ("Символ неумолимой, разрушительной силы")
+                  ::icon(fa fa-horse-head)
+                  ("Скачки / Лошадь Фру-Фру")
+                    ("Предзнаменование падения Анны")
+                    ("Публичное унижение")
+                  ::icon(fa fa-lightbulb)
+                  ("Свеча")
+                    ("Символ угасающей жизни")
+                    ("Духовное прозрение")
+            </div>
+        </div>
+
+        <!-- Diagram 6: Comparison of Love -->
+        <div class="diagram-container">
+            <h2>Сравнение "мысли семейной": два пути любви</h2>
+            <p class="explanation">Толстой исследует две модели любви и семьи. Одна, основанная на страсти и эгоизме, ведет к разрушению. Другая, прошедшая через трудности к смирению и долгу, — к гармонии.</p>
+            <div class="mermaid">
+                graph LR
+
+                    subgraph "Путь Анны и Вронского"
+                    direction LR
+
+                        A1[Страсть] --> A2[Бунт против общества];
+                        A2 --> A3[Эгоизм и ревность];
+                        A3 --> A4[Потеря опоры];
+                        A4 --> A5(<b>ТРАГЕДИЯ</b>);
+                    end
+
+                    subgraph "Путь Левина и Китти"
+                    direction LR
+
+                        B1[Любовь] --> B2[Кризис и прощение];
+                        B2 --> B3[Долг и служение];
+                        B3 --> B4[Обретение веры];
+                        B4 --> B5(<b>ГАРМОНИЯ</b>);
+                    end
+                    
+                    style A5 fill:#c0392b,color:white,stroke-width:2px,stroke:#333
+                    style B5 fill:#27ae60,color:white,stroke-width:2px,stroke:#333
+            </div>
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Литературные Инфографики</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            border-bottom: 3px solid #a9cce3;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .book-card {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #a9cce3;
+        }
+        .book-title {
+            color: #c0392b;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        .book-author {
+            color: #1a5276;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .book-description {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .book-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a5276, #2980b9);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .book-link:hover {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            transform: scale(1.05);
+        }
+        .book-genres {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .genre-tag {
+            background: #e8f4fd;
+            color: #1a5276;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid #a9cce3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Литературные Инфографики</h1>
+        <p class="subtitle">Визуализация произведений литературы через диаграммы и схемы</p>
+        
+        <div class="books-grid">
+            <!-- Трудно быть богом -->
+            <div class="book-card">
+                <div class="book-genres">
+                    <span class="genre-tag">Научная фантастика</span>
+                    <span class="genre-tag">Философия</span>
+                </div>
+                <h2 class="book-title">«Трудно быть богом»</h2>
+                <p class="book-author">Аркадий и Борис Стругацкие</p>
+                <p class="book-description">
+                    Философская повесть о прогрессоре Румате, который наблюдает за средневековым обществом планеты Арканар. Глубокое исследование природы власти, насилия и человечности.
+                </p>
+                <a href="1.html" class="book-link">Посмотреть диаграммы →</a>
+            </div>
+
+            <!-- Дама с собачкой -->
+            <div class="book-card">
+                <div class="book-genres">
+                    <span class="genre-tag">Реализм</span>
+                    <span class="genre-tag">Любовная драма</span>
+                </div>
+                <h2 class="book-title">«Дама с собачкой»</h2>
+                <p class="book-author">Антон Павлович Чехов</p>
+                <p class="book-description">
+                    Классический рассказ о неожиданной любви между циничным московским банкиром и замужней дамой, которая изменила всю их жизнь.
+                </p>
+                <a href="2.html" class="book-link">Посмотреть диаграммы →</a>
+            </div>
+
+            <!-- Анна Каренина -->
+            <div class="book-card">
+                <div class="book-genres">
+                    <span class="genre-tag">Реализм</span>
+                    <span class="genre-tag">Семейная драма</span>
+                </div>
+                <h2 class="book-title">«Анна Каренина»</h2>
+                <p class="book-author">Лев Николаевич Толстой</p>
+                <p class="book-description">
+                    Великий роман о трагической любви Анны Карениной и духовных исканиях Константина Левина. Глубокое исследование российского общества XIX века.
+                </p>
+                <a href="3.html" class="book-link">Посмотреть диаграммы →</a>
+            </div>
+
+            <!-- 1984 -->
+            <div class="book-card">
+                <div class="book-genres">
+                    <span class="genre-tag">Антиутопия</span>
+                    <span class="genre-tag">Политическая сатира</span>
+                </div>
+                <h2 class="book-title">«1984»</h2>
+                <p class="book-author">Джордж Оруэлл</p>
+                <p class="book-description">
+                    Пророческая антиутопия о тotalitарном обществе будущего, где Большой Брат контролирует каждую мысль. Предупреждение о опасностях авторитаризма.
+                </p>
+                <a href="4.html" class="book-link">Посмотреть диаграммы →</a>
+            </div>
+
+            <!-- Generation П -->
+            <div class="book-card">
+                <div class="book-genres">
+                    <span class="genre-tag">Постмодернизм</span>
+                    <span class="genre-tag">Сатира</span>
+                </div>
+                <h2 class="book-title">«Generation П»</h2>
+                <p class="book-author">Виктор Олегович Пелевин</p>
+                <p class="book-description">
+                    Сатирический роман о России 1990-х через призму рекламной индустрии. История Вавилена Татарского и его превращения в творца виртуальной реальности.
+                </p>
+                <a href="5.html" class="book-link">Посмотреть диаграммы →</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Все диаграммы созданы с использованием библиотеки <strong>Mermaid</strong></p>
+            <p>Интерактивные схемы помогают лучше понять структуру, персонажей и ключевые темы литературных произведений</p>
+        </div>
+    </div>
+</body>
+</html>

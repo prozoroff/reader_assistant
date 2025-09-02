@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика по книге "Трудно быть богом"</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            border-bottom: 3px solid #a9cce3;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+        .diagram-container {
+            margin-bottom: 60px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            background: #fdfdfd;
+        }
+        h2 {
+            text-align: center;
+            color: #c0392b;
+            margin-top: 0;
+        }
+        p.explanation {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 15px auto 30px auto;
+        }
+        .mermaid {
+            text-align: center;
+        }
+        /* Style for Mermaid SVG to ensure it's large and clear */
+        svg[id^="m"][width][height] {
+            width: 100%;
+            max-width: 900px; /* Max-width to prevent it from becoming too huge on very large screens */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Инфографика по роману "Трудно быть богом"</h1>
+
+        <!-- Diagram 1: Character Map -->
+        <div class="diagram-container">
+            <h2>Карта взаимоотношений персонажей</h2>
+            <p class="explanation">
+                Эта диаграмма показывает сложные связи между ключевыми фигурами романа. Цветом выделены группы: земляне-прогрессоры, влиятельные арканарцы и антагонисты.
+            </p>
+            <div class="mermaid">
+graph TD
+    subgraph "Земляне (Прогрессоры)"
+        Rumata("Дон Румата (Антон)")
+        Condor("Дон Кондор (Александр)")
+        Estor("Дон Эстор (Павел)")
+    end
+
+    subgraph "Арканарцы"
+        Kira(Кира)
+        Budakh(Будах)
+        Pampa("Дон Пампа")
+        Knigochei("Книгочеи (Интеллигенция)")
+    end
+
+    subgraph "Силы Угнетения"
+        Reba("Дон Рэба")
+        BlackOrder("Святой Орден")
+        Greys("Серые штурмовики")
+    end
+
+    Rumata -- Любовь --> Kira
+    Rumata -- Дружба --> Pampa
+    Rumata -- Пытается спасти --> Budakh
+    Rumata -.->|Тайно помогает| Knigochei
+    Rumata -- Вражда и противостояние --> Reba
+    Reba -- Манипулирует/Использует --> Greys
+    Greys -- Охота и уничтожение --> Knigochei
+    Kira -- Погибает от рук --> BlackOrder
+    Rumata -- Ненависть и срыв --> BlackOrder
+    BlackOrder -- Свергает --> Reba
+    Condor -- Контроль и инструктаж --> Rumata
+
+    style Rumata fill:#a9cce3,stroke:#2980b9,stroke-width:2px
+    style Kira fill:#f5b7b1,stroke:#c0392b,stroke-width:2px
+    style Reba fill:#abb2b9,stroke:#566573,stroke-width:2px,color:#fff
+    style BlackOrder fill:#212f3c,stroke:#000,stroke-width:2px,color:#fff
+            </div>
+        </div>
+
+        <!-- Diagram 2: Core Conflict -->
+        <div class="diagram-container">
+            <h2>Ключевой конфликт Руматы: дилемма прогрессора</h2>
+            <p class="explanation">
+                Сердце романа — внутренний конфликт главного героя. Он разрывается между долгом (не вмешиваться в историю) и человеческим желанием остановить жестокость.
+            </p>
+            <div class="mermaid">
+graph LR
+    A(Жестокость и несправедливость в Арканаре) --> B{Каким путем идти?};
+
+    B --> C[<b style='color: #2980b9;'>Путь 'Прогрессора'</b><br/>Строго следовать инструкции<br/>Не применять силу<br>Наблюдать и спасать избранных<br><i>Основа: Базисная теория истории</i>];
+    B --> D[<b style='color: #c0392b;'>Путь Человека</b><br/>Вмешаться и наказать зло<br/>Использовать технологии<br>Спасти всех, кого возможно<br><i>Основа: Гуманизм и сострадание</i>];
+
+    KiraDeath(Смерть Киры) --> E(<b>Срыв:</b><br/> Румата отвергает<br/> путь прогрессоora и<br/> становится карающим богом);
+    
+    C -.->|Постоянное сомнение| D;
+    D -.->|Чувство вины| C;
+    C --> KiraDeath;
+
+    style C fill:#eaf2f8,stroke:#2980b9,stroke-width:2px
+    style D fill:#fdedec,stroke:#c0392b,stroke-width:2px
+    style E fill:#fad7a0,stroke:#f39c12,stroke-width:3px
+            </div>
+        </div>
+
+        <!-- Diagram 3: Evolution of Power -->
+        <div class="diagram-container">
+            <h2>Эволюция власти в Арканаре</h2>
+            <p class="explanation">
+                Диаграмма иллюстрирует смену режимов в Арканаре. Каждый новый этап оказывается хуже предыдущего, показывая цикличность и усугубление тирании.
+            </p>
+            <div class="mermaid">
+timeline
+    title Деградация власти в Арканаре
+    section Феодальная анархия
+        Герцогская власть (номинальная) : Начало "Серого террора" под руководством Дона Рэбы : Систематическая охота на "книгочеев", ученых и поэтов.
+    section Пик власти Дона Рэбы
+        Полный контроль "серых" штурмовиков : Государственный переворот. Дон Рэба убит.
+    section Приход к власти Святого Ордена
+        "Черный террор". Репрессии становятся тотальными и фанатичными : Полное подавление инакомыслия. Общество погружается в ещё более глубокое средневековье.
+
+
+            </div>
+        </div>
+
+        <!-- Diagram 4: System of Suppression -->
+        <div class="diagram-container">
+            <h2>Конвейер Серого Террора</h2>
+            <p class="explanation">
+                Эта блок-схема показывает безжалостный механизм, созданный Доном Рэбой для подавления любого проявления разума и таланта в арканарском обществе.
+            </p>
+            <div class="mermaid">
+flowchart TD
+    A[Человек проявляет<br>талант, ум, грамотность] --> B{"Замечен серыми штурмовиками<br>или доносчиками?"};
+    B -- Да --> C["Арест, допрос, пытки.<br>Часто — публичная казнь."];
+    B -- Нет --> D["Живет в постоянном страхе,<br>скрывая свои способности"];
+    D --> B;
+
+    classDef danger fill:#fdedec,stroke:#c0392b,stroke-width:2px;
+    classDef process fill:#eaf2f8,stroke:#2980b9,stroke-width:2px;
+    class A process;
+    class C danger;
+            </div>
+        </div>
+
+        <!-- Diagram 5: Central Themes -->
+        <div class="diagram-container">
+            <h2>Ключевые темы романа</h2>
+            <p class="explanation">
+                Mind map, раскрывающий главные философские и социальные вопросы, которые ставят авторы перед читателем.
+            </p>
+            <div class="mermaid">
+mindmap
+  root((Трудно быть богом))
+    <b>Прогрессорство</b>
+      ::icon(fa fa-user-secret)
+      Невмешательство vs Помощь
+      Моральная ответственность
+      Цена прогресса
+    <b>Природа Власти</b>
+      ::icon(fa fa-chess-king)
+      Террор как инструмент управления
+      Деградация от серого к черному
+      Манипуляция религией и страхом
+    <b>Хрупкость Культуры</b>
+      ::icon(fa fa-book-dead)
+      Целенаправленное уничтожение интеллигенции
+      "Охота на книгочеев"
+      Легкость погружения в варварство
+    <b>Гуманизм и Жестокость</b>
+      ::icon(fa fa-hand-holding-heart)
+      Внутренняя борьба Руматы
+      Можно ли остаться человеком, видя бесчеловечность?
+      Срыв как трагедия гуманиста
+            </div>
+        </div>
+        
+        <!-- Diagram 6: Two Approaches to Progress -->
+        <div class="diagram-container">
+            <h2>Два подхода к прогрессу: Румата vs. Арата</h2>
+            <p class="explanation">
+                Сравнение двух противоположных взглядов на то, как следует изменять общество к лучшему. Румата и мятежник Арата олицетворяют два разных пути.
+            </p>
+            <div class="mermaid">
+graph LR
+    subgraph "Подход Руматы (Землянин)"
+        direction LR
+        A1[Гуманизм] --> A2[Спасение<br/>отдельных личностей];
+        A2 --> A3[Попытка<br/>сохранить очаги культуры];
+        A3 --> A4[Минимум насилия];
+        A4 --> A5(<b>Цель:</b><br/>Эволюционный рост);
+    end
+
+    subgraph "Подход Араты (Арканарец)"
+        direction LR
+        B1[Ненависть к угнетателям] --> B2[Массовое<br/>вооруженное восстание];
+        B2 --> B3[Жестокость<br/>оправдана целью];
+        B3 --> B4[Безразличие к<br/>судьбе интеллигенции];
+        B4 --> B5(<b>Цель:</b><br/>Революционная смена власти);
+    end
+    
+    style A5 fill:#a9cce3,stroke:#2980b9,stroke-width:2px
+    style B5 fill:#f5b7b1,stroke:#c0392b,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- Diagram 7: Rumata's Emotional Palette -->
+        <div class="diagram-container">
+            <h2>Эмоциональная палитра Дона Руматы</h2>
+            <p class="explanation">
+                Круговая диаграмма, показывающая доминирующие чувства, которые испытывает главный герой на протяжении большей части книги. Это мир, полный отвращения и бессилия, где надежда занимает очень мало места.
+            </p>
+            <div class="mermaid">
+pie
+    title Эмоции Дона Руматы в Арканаре
+    "Бессилие и фрустрация" : 40
+    "Отвращение и цинизм" : 25
+    "Скорбь и ярость (финал)" : 20
+    "Любовь и надежда (Кира)" : 15
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+</body>
+</html>
